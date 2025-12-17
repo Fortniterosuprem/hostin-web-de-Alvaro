@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Datos Personales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:  linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow:  2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size:  1.1em;
+            opacity: 0.9;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-info h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            color: #888;
+            font-size: 0.95em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size:  1.3em;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            font-weight: bold;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .data-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition:  transform 0.2s ease;
+        }
+
+        .data-item:hover {
+            transform: translateX(5px);
+            background: #f0f1ff;
+        }
+
+        .data-label {
+            color: #888;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .data-value {
+            color: #333;
+            font-size: 1.05em;
+            font-weight:  500;
+        }
+
+        .list-items {
+            list-style: none;
+        }
+
+        .list-items li {
+            padding: 10px;
+            background: #f8f9fa;
+            margin-bottom: 8px;
+            border-radius:  6px;
+            border-left:  3px solid #764ba2;
+            transition: all 0.2s ease;
+        }
+
+        .list-items li:hover {
+            background: #f0f1ff;
+            transform: translateX(5px);
+        }
+
+        .list-items li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight:  bold;
+            margin-right: 8px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding:  12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn-edit {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background:  #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-delete {
+            background: #ff6b6b;
+            color:  white;
+        }
+
+        .btn-delete:hover {
+            background: #ee5a55;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👤 Mi Perfil Personal</h1>
+            <p>Mis datos y información de interés</p>
+        </header>
+
+        <div class="profile-card">
+            <!-- Encabezado del perfil -->
+            <div class="profile-header">
+                <div class="avatar">
+                    <a href="index.html"><img src="gege.PNG" alt="Botón a Principal"></a>
+                </div>
+                <div class="profile-info">
+                    <h2>Fortniterosuprem</h2>
+                    <p>Usuario de GitHub | Gamer | Estudiante</p>
+                </div>
+            </div>
+
+            <!-- Información Básica -->
+            <div class="section">
+                <div class="section-title">📋 Información Básica</div>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <div class="data-label">Nombre de Usuario</div>
+                        <div class="data-value">Fortniterosuprem</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Edad</div>
+                        <div class="data-value">17 años</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">País</div>
+                        <div class="data-value">España</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intereses y Hobbies -->
+            <div class="section">
+                <div class="section-title">🎯 Intereses y Hobbies</div>
+                <ul class="list-items">
+                    <li>Videojuegos (Fortnite, Hollow Knight, Minecraft)</li>
+                    <li>Programación y desarrollo web</li>
+                    <li>Anime (especialmente Jujutsu Kaisen)</li>
+                    <li>Streaming y contenido digital</li>
+                    <li>Tecnología, gadgets y Experimentos</li>
+                </ul>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="section">
+                <div class="section-title">🔗 Redes Sociales</div>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <div class="data-label">GitHub</div>
+                        <div class="data-value">@Fortniterosuprem</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Discord</div>
+                        <div class="data-value">@Fortniterosuprem</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Twitch</div>
+                        <div class="data-value">No tengo</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">YouTube</div>
+                        <div class="data-value">@Fortniterosuprem</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Instagram</div>
+                        <div class="data-value">@Fortniterosuprem</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">YouTube Music</div>
+                        <div class="data-value">@Fortniterosuprem</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Datos Curiosos -->
+            <div class="section">
+                <div class="section-title">🌟 Datos Curiosos</div>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <div class="data-label">Color Favorito</div>
+                        <div class="data-value">Morado y Rojo</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Comida Favorita</div>
+                        <div class="data-value">Tortilla de patatas</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Género Musical</div>
+                        <div class="data-value">Phonk, Rap, Electrónica</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Anime Favorito</div>
+                        <div class="data-value">Jujutsu Kaisen</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Videojuego Favorito</div>
+                        <div class="data-value">Minecraft y Silksong</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Personaje Favorito</div>
+                        <div class="data-value">Satoru Gojo</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Habilidades Técnicas -->
+            <div class="section">
+                <div class="section-title">💻 Habilidades Técnicas</div>
+                <ul class="list-items">
+                    <li>HTML5, CSS3, Python</li>
+                    <li>Python, Java, C++</li>
+                </ul>
+            </div>
+        <footer>
+            <p>© 2025 Mi Perfil Personal | Datos no importantes</p>
+        </footer>
+    </div>
+</body>
+</html>

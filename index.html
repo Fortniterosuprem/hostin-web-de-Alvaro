@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas de Jujutsu Kaisen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background:  linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: url(satoru.jpg);
+            background-position: center;
+            
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 3px solid #ff0000;
+            margin-bottom:  40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size:  1.1em;
+            color: #ffb347;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin:  0 auto;
+            padding: 0 20px;
+        }
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .pelicula {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #ff0000;
+            border-radius:  10px;
+            padding:  20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .pelicula:hover {
+            transform:  translateY(-10px);
+            box-shadow:  0 10px 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .pelicula h2 {
+            font-size: 1.8em;
+            color: #ffb347;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 10px;
+        }
+
+        .pelicula .año {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .pelicula h3 {
+            color: #ff0000;
+            margin-top: 15px;
+            margin-bottom:  8px;
+            font-size: 1.1em;
+        }
+
+        .pelicula p {
+            color: #ddd;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        .info-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-left: 3px solid #ff0000;
+            margin-bottom: 12px;
+            border-radius: 5px;
+        }
+
+        .info-block strong {
+            color: #ffb347;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff0000;
+            margin-top: 40px;
+            color: #888;
+        }
+
+        .destacado {
+            color: #ffb347;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+
+            .pelicula h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Películas de Jujutsu Kaisen</h1>
+        <p>Las tres películas del anime más épico del momento</p>
+        <a href="Alvaro.html"><img src="gege.PNG" alt="Botón a Álvaro" style="width: 100px; height: auto; margin-top: 10px;"></a>
+    </header>
+
+    <div class="container">
+        <div class="peliculas">
+            <!-- Película 1 -->
+            <div class="pelicula">
+                <h2>Jujutsu Kaisen 0</h2>
+                <p class="año">📅 Estreno: 24 de Diciembre de 2021</p>
+                
+                <h3>📖 Sinopsis</h3>
+                <p>La película precuela que cuenta la historia de <span class="destacado">Yuta Okkotsu</span>, quien es atormentado por un espíritu maldito.  Se une a la Academia Jujutsu bajo la tutela de Gojo para controlar sus poderes y descubre la verdadera naturaleza de su maldición.</p>
+                
+                <div class="info-block">
+                    <strong>🎬 Duración:</strong> 119 minutos
+                </div>
+
+                <h3>👥 Personajes Principales</h3>
+                <p>Yuta Okkotsu, Satoru Gojo, Maki Zenin, Panda, Toge Inumaki</p>
+
+                <h3>⭐ Destacado</h3>
+                <p>Primera aparición del Poder Limitado de Okkotsu y batallas espectaculares.  Recaudó millones en el box office mundial.</p>
+            </div>
+
+            <!-- Película 2 -->
+            <div class="pelicula">
+                <h2>Jujutsu Kaisen Movie: Hidden Inventory</h2>
+                <p class="año">📅 Estreno: 26 de Marzo de 2022</p>
+                
+                <h3>📖 Sinopsis</h3>
+                <p>Una película que profundiza en el pasado de <span class="destacado">Satoru Gojo</span> y <span class="destacado">Geto Suguru</span>. Muestra cómo estos dos fueron estudiantes juntos, sus primeras misiones y el evento que cambió sus vidas para siempre.</p>
+                
+                <div class="info-block">
+                    <strong>🎬 Duración: </strong> 96 minutos
+                </div>
+
+                <h3>👥 Personajes Principales</h3>
+                <p>Satoru Gojo (joven), Geto Suguru (joven), Gojo (actual), Nanami</p>
+
+                <h3>⭐ Destacado</h3>
+                <p>Revela secretos cruciales sobre la amistad entre Gojo y Geto.  Muestra el verdadero potencial de los Poderes Limitados de Gojo.</p>
+            </div>
+
+            <!-- Película 3 -->
+            <div class="pelicula">
+                <h2>Jujutsu Kaisen Shibuya Incident</h2>
+                <p class="año">📅 Estreno: 16 de Diciembre de 2023</p>
+                
+                <h3>📖 Sinopsis</h3>
+                <p>La película más épica que adapta el arco del Incidente de Shibuya. Los hechiceros enfrentan a maldiciones enormes en las calles de Tokio.  <span class="destacado">Yuji Itadori</span> y sus aliados luchan contra enemigos devastadores en una batalla sin precedentes.</p>
+                
+                <div class="info-block">
+                    <strong>🎬 Duración:</strong> 158 minutos
+                </div>
+
+                <h3>👥 Personajes Principales</h3>
+                <p>Yuji Itadori, Satoru Gojo, Ryomen Sukuna, Megumi Fushiguro, Nobara Kugisaki</p>
+
+                <h3>⭐ Destacado</h3>
+                <p>La batalla más larga de la franquicia. Transformaciones épicas y momentos que cambian el futuro de toda la serie.  La película más taquillera de las tres.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Página de fans de Jujutsu Kaisen | Creada con ❤️</p>
+    </footer>
+</body>
+</html>
